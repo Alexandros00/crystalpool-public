@@ -81,16 +81,21 @@
       const languageCode = window.location.pathname.split("/")[1];
 
       // Redirect based on the language code
-      switch (languageCode) {
-        case "en":
-          window.location.href = "/index-en.html";
-          break;
-        case "el":
-          window.location.href = "/index-el.html";
-          break;
-        default:
-          // Redirect invalid codes or root URL to English
-          window.location.href = "/index-en.html";
+      if (!languageCode || languageCode === "") {
+        // Redirect root ("/") to English by default
+        window.location.href = "/index-en.html";
+      } else {
+        switch (languageCode) {
+          case "en":
+            window.location.href = "/index-en.html";
+            break;
+          case "el":
+            window.location.href = "/index-el.html";
+            break;
+          default:
+            // Redirect invalid codes to English by default
+            window.location.href = "/index-en.html";
+        }
       }
     </script>
   </body>
