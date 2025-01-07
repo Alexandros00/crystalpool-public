@@ -76,27 +76,5 @@
         <p style="color: #ff0000">This site requires JavaScript to function properly. Please enable JavaScript in your browser.</p>
       </div>
     </noscript>
-    <script>
-      // Get the first part of the URL path (language code)
-      const languageCode = window.location.pathname.split("/")[1];
-
-      // Redirect based on the language code
-      if (!languageCode || languageCode === "") {
-        // Redirect root ("/") to English by default
-        window.location.href = "/index-en.html";
-      } else {
-        switch (languageCode) {
-          case "en":
-            window.location.href = "/index-en.html";
-            break;
-          case "el":
-            window.location.href = "/index-el.html";
-            break;
-          default:
-            // Redirect invalid codes to English by default
-            window.location.href = "/index-en.html";
-        }
-      }
-    </script>
   </body>
 </html>
